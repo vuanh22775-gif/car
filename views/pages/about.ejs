@@ -1,0 +1,72 @@
+<div class="min-h-screen bg-gray-50">
+  <section class="bg-gradient-to-r from-blue-600 to-blue-800 text-white py-20">
+    <div class="container-custom text-center">
+      <h1 class="text-4xl md:text-5xl font-bold mb-6">Về MOTO</h1>
+      <p class="text-xl max-w-3xl mx-auto opacity-90">Cùng bạn trên mọi hành trình khám phá cuộc sống và thế giới xung quanh</p>
+    </div>
+  </section>
+
+  <section class="py-16 container-custom">
+    <div class="max-w-4xl mx-auto">
+      <h2 class="text-3xl font-bold text-center mb-8">Câu chuyện của chúng tôi</h2>
+      <div class="space-y-6 text-gray-600 text-lg leading-relaxed">
+        <p><strong class="text-blue-600">MOTO</strong> được thành lập với sứ mệnh đơn giản: Kết nối những người có xe nhàn rỗi với những người cần di chuyển, tạo ra một cộng đồng chia sẻ xe an toàn và tin cậy.</p>
+        <p>Chúng tôi tin rằng mỗi chuyến đi đều là một hành trình khám phá, là cơ hội để học hỏi và chinh phục những điều mới mẻ. Do đó, chất lượng trải nghiệm của khách hàng luôn là ưu tiên hàng đầu và là nguồn cảm hứng của đội ngũ MOTO.</p>
+        <p>Với hơn <strong>15.000 xe</strong> trên toàn quốc, MOTO tự hào là nền tảng chia sẻ ô tô hàng đầu Việt Nam, phục vụ hơn <strong>500.000 khách hàng</strong> với sự hài lòng lên đến <strong>4.8/5 sao</strong>.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-16 bg-white">
+    <div class="container-custom">
+      <h2 class="text-3xl font-bold text-center mb-12">Giá trị của MOTO</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div class="text-center">
+          <div class="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4"><i data-lucide="target" class="text-blue-600 w-8 h-8"></i></div>
+          <h3 class="text-xl font-semibold mb-2">Sứ mệnh</h3>
+          <p class="text-gray-600">Kết nối chủ xe và khách hàng một cách Nhanh chóng - An toàn - Tiện lợi</p>
+        </div>
+        <div class="text-center">
+          <div class="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4"><i data-lucide="heart" class="text-blue-600 w-8 h-8"></i></div>
+          <h3 class="text-xl font-semibold mb-2">Giá trị cốt lõi</h3>
+          <p class="text-gray-600">Chất lượng trải nghiệm của khách hàng là ưu tiên hàng đầu</p>
+        </div>
+        <div class="text-center">
+          <div class="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4"><i data-lucide="sparkles" class="text-blue-600 w-8 h-8"></i></div>
+          <h3 class="text-xl font-semibold mb-2">Tầm nhìn</h3>
+          <p class="text-gray-600">Truyền cảm hứng KHÁM PHÁ những điều mới mẻ đến cộng đồng</p>
+        </div>
+        <div class="text-center">
+          <div class="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4"><i data-lucide="users" class="text-blue-600 w-8 h-8"></i></div>
+          <h3 class="text-xl font-semibold mb-2">Cộng đồng</h3>
+          <p class="text-gray-600">15.000+ xe gia đình đời mới khắp Việt Nam</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-16 bg-gray-100">
+    <div class="container-custom">
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-8">
+        <div class="text-center"><div class="text-3xl md:text-4xl font-bold text-blue-600">15.000+</div><div class="text-gray-600 mt-1">Xe đa dạng</div></div>
+        <div class="text-center"><div class="text-3xl md:text-4xl font-bold text-blue-600">500.000+</div><div class="text-gray-600 mt-1">Khách hàng</div></div>
+        <div class="text-center"><div class="text-3xl md:text-4xl font-bold text-blue-600">4.8/5</div><div class="text-gray-600 mt-1">Đánh giá</div></div>
+        <div class="text-center"><div class="text-3xl md:text-4xl font-bold text-blue-600">63</div><div class="text-gray-600 mt-1">Tỉnh thành</div></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-16 container-custom">
+    <h2 class="text-3xl font-bold text-center mb-4">Đội ngũ MOTO</h2>
+    <p class="text-gray-600 text-center max-w-2xl mx-auto mb-12">Những người đam mê, sáng tạo và tận tâm, luôn nỗ lực để mang đến trải nghiệm tốt nhất cho khách hàng</p>
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+      <% for (let i = 1; i <= 3; i++) { %>
+        <div class="bg-white rounded-xl shadow-md p-6 text-center hover:shadow-lg transition">
+          <div class="w-24 h-24 rounded-full bg-blue-100 mx-auto mb-4 flex items-center justify-center"><i data-lucide="users" class="text-blue-600 w-10 h-10"></i></div>
+          <h4 class="font-semibold text-lg">Thành viên <%= i %></h4>
+          <p class="text-gray-500 text-sm">Vị trí</p>
+        </div>
+      <% } %>
+    </div>
+  </section>
+</div>

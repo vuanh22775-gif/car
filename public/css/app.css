@@ -1,0 +1,30 @@
+/* CSS bổ sung cho các phần tử được tạo/đổi class hoàn toàn bằng JS phía client
+   (Tailwind CLI chỉ quét được class xuất hiện literal trong file .ejs/.js, nên
+   một số class ghép chuỗi động được liệt kê lại ở đây cho chắc chắn). */
+
+body {
+  font-family: 'Inter', system-ui, sans-serif;
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.3s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+/* Đảm bảo spinner luôn hoạt động dù safelist Tailwind có sót class */
+.spinner {
+  display: inline-block;
+  border-radius: 9999px;
+  border-style: solid;
+  border-color: currentColor;
+  border-right-color: transparent;
+  animation: spin 0.75s linear infinite;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}

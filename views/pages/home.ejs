@@ -1,0 +1,178 @@
+<div class="min-h-screen bg-gray-50">
+
+  <!-- Hero Section -->
+  <section class="relative text-white">
+    <div class="absolute inset-0">
+      <img src="https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?w=1600&q=85"
+           alt="Hero background" class="w-full h-full object-cover object-center" />
+      <div class="absolute inset-0 bg-gradient-to-r from-black/70 via-black/50 to-black/20"></div>
+    </div>
+
+    <div class="relative container-custom py-24 lg:py-36">
+      <div class="max-w-3xl">
+        <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold mb-4 leading-tight drop-shadow-lg">
+          MOTO - Cùng Bạn Trên Mọi Hành Trình
+        </h1>
+        <p class="text-xl md:text-2xl mb-8 opacity-90 drop-shadow">
+          Trải nghiệm sự khác biệt từ 15.000 xe gia đình đời mới khắp Việt Nam
+        </p>
+        <form id="home-search-form" class="bg-white rounded-2xl shadow-2xl p-4 md:p-6 text-gray-800">
+          <div class="grid grid-cols-1 md:grid-cols-4 gap-3">
+            <div class="relative">
+              <i data-lucide="map-pin" class="absolute left-3 top-3.5 text-blue-500 w-5 h-5"></i>
+              <input type="text" name="location" placeholder="Địa điểm"
+                class="w-full pl-10 pr-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500" />
+            </div>
+            <div class="relative">
+              <i data-lucide="calendar" class="absolute left-3 top-3.5 text-blue-500 w-5 h-5"></i>
+              <input type="date" name="startDate"
+                class="w-full pl-10 pr-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500" />
+            </div>
+            <div class="relative">
+              <i data-lucide="calendar" class="absolute left-3 top-3.5 text-blue-500 w-5 h-5"></i>
+              <input type="date" name="endDate"
+                class="w-full pl-10 pr-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500" />
+            </div>
+            <button type="submit"
+              class="bg-blue-600 text-white py-3 px-6 rounded-lg hover:bg-blue-700 transition flex items-center justify-center gap-2 font-medium">
+              <i data-lucide="search" class="w-5 h-5"></i> Tìm Xe
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- Stats -->
+  <section class="py-12 bg-white shadow-sm">
+    <div class="container-custom">
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-8">
+        <div class="text-center"><div class="text-3xl md:text-4xl font-bold text-blue-600">15.000+</div><div class="text-gray-600 mt-1">Xe đa dạng</div></div>
+        <div class="text-center"><div class="text-3xl md:text-4xl font-bold text-blue-600">500.000+</div><div class="text-gray-600 mt-1">Khách hàng</div></div>
+        <div class="text-center"><div class="text-3xl md:text-4xl font-bold text-blue-600">4.8/5</div><div class="text-gray-600 mt-1">Đánh giá</div></div>
+        <div class="text-center"><div class="text-3xl md:text-4xl font-bold text-blue-600">63</div><div class="text-gray-600 mt-1">Tỉnh thành</div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Service Features -->
+  <section class="py-16 container-custom">
+    <h2 class="text-3xl font-bold text-center mb-12">Dịch vụ của chúng tôi</h2>
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+      <div class="bg-white p-6 rounded-xl shadow-md text-center hover:shadow-lg transition">
+        <div class="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4"><i data-lucide="car" class="text-blue-600 w-8 h-8"></i></div>
+        <h3 class="text-xl font-semibold mb-2">Xe tự lái</h3>
+        <p class="text-gray-600">Thuê xe tự lái với đa dạng mẫu mã, giá cả hợp lý</p>
+      </div>
+      <div class="bg-white p-6 rounded-xl shadow-md text-center hover:shadow-lg transition">
+        <div class="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4"><i data-lucide="users" class="text-blue-600 w-8 h-8"></i></div>
+        <h3 class="text-xl font-semibold mb-2">Xe có tài xế</h3>
+        <p class="text-gray-600">Dịch vụ xe có tài xế chuyên nghiệp, an toàn</p>
+      </div>
+      <div class="bg-white p-6 rounded-xl shadow-md text-center hover:shadow-lg transition">
+        <div class="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4"><i data-lucide="clock" class="text-blue-600 w-8 h-8"></i></div>
+        <h3 class="text-xl font-semibold mb-2">Thuê xe dài hạn</h3>
+        <p class="text-gray-600">Gói thuê xe dài hạn với nhiều ưu đãi hấp dẫn</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Featured Vehicles -->
+  <section class="py-16 bg-gray-50">
+    <div class="container-custom">
+      <div class="flex justify-between items-center mb-8">
+        <div>
+          <h2 class="text-3xl font-bold">Xe nổi bật</h2>
+          <p class="text-gray-500 mt-1">Những chiếc xe được quan tâm nhiều nhất</p>
+        </div>
+        <a href="/vehicles" class="text-blue-600 hover:text-blue-700 font-semibold flex items-center gap-1">
+          Xem tất cả <i data-lucide="arrow-right" class="w-[18px] h-[18px]"></i>
+        </a>
+      </div>
+      <div id="featured-vehicles-root">
+        <div class="text-center py-12"><div class="spinner h-12 w-12 border-blue-500 mx-auto"></div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- About MOTO -->
+  <section class="py-20 bg-white">
+    <div class="container-custom">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center mb-20">
+        <div>
+          <h2 class="text-4xl md:text-5xl font-bold leading-tight mb-6">MOTO - Cùng bạn đến mọi hành trình</h2>
+          <div class="space-y-4 text-gray-600 text-lg leading-relaxed">
+            <p>Mỗi chuyến đi là một hành trình khám phá cuộc sống và thế giới xung quanh, là cơ hội học hỏi và chinh phục những điều mới lạ của mỗi cá nhân để trở nên tốt hơn. Do đó, chất lượng trải nghiệm của khách hàng là ưu tiên hàng đầu và là nguồn cảm hứng của đội ngũ MOTO.</p>
+            <p><strong class="text-blue-600">MOTO</strong> là nền tảng chia sẻ ô tô, sứ mệnh của chúng tôi không chỉ dừng lại ở việc kết nối chủ xe và khách hàng một cách <strong class="text-blue-600">Nhanh chóng - An toàn - Tiện lợi</strong>, mà còn hướng đến việc truyền cảm hứng <strong class="text-blue-600">KHÁM PHÁ</strong> những điều mới lạ đến cộng đồng qua những chuyến đi trên nền tảng của chúng tôi.</p>
+          </div>
+          <a href="/vehicles" class="inline-flex items-center gap-2 mt-8 px-6 py-3 bg-blue-600 text-white rounded-xl hover:bg-blue-700 transition font-medium">
+            Khám phá xe ngay <i data-lucide="chevron-right" class="w-[18px] h-[18px]"></i>
+          </a>
+        </div>
+        <div class="relative h-80 md:h-96 rounded-2xl overflow-hidden">
+          <div class="absolute inset-0 grid grid-cols-2">
+            <div class="relative overflow-hidden"><img src="https://images.unsplash.com/photo-1544636331-e26879cd4d9b?w=600&q=80" alt="Lái xe khám phá" class="w-full h-full object-cover" /></div>
+            <div class="relative overflow-hidden"><img src="https://images.unsplash.com/photo-1591134105015-ca5f6a0f34a2?w=600&q=80" alt="Hành trình" class="w-full h-full object-cover" /></div>
+          </div>
+          <div class="absolute inset-0 flex items-center justify-center pointer-events-none">
+            <div class="w-1 h-full bg-white rotate-12 scale-150 opacity-80"></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mb-20">
+        <div class="md:col-span-2 h-72 rounded-2xl overflow-hidden">
+          <img src="https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?w=900&q=80" alt="Đường cao tốc" class="w-full h-full object-cover hover:scale-105 transition duration-500" />
+        </div>
+        <div class="flex flex-col gap-4">
+          <div class="flex-1 rounded-2xl overflow-hidden"><img src="https://images.unsplash.com/photo-1533473359331-0135ef1b58bf?w=500&q=80" alt="Xe trên núi" class="w-full h-full object-cover hover:scale-105 transition duration-500" /></div>
+          <div class="flex-1 rounded-2xl overflow-hidden"><img src="https://images.unsplash.com/photo-1502877338535-766e1452684a?w=500&q=80" alt="Xe bãi biển" class="w-full h-full object-cover hover:scale-105 transition duration-500" /></div>
+        </div>
+      </div>
+
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+        <div class="grid grid-cols-2 gap-4 h-96">
+          <div class="rounded-2xl overflow-hidden row-span-2"><img src="https://images.unsplash.com/photo-1568605117036-5fe5e7bab0b7?w=500&q=80" alt="Xe sang" class="w-full h-full object-cover hover:scale-105 transition duration-500" /></div>
+          <div class="rounded-2xl overflow-hidden"><img src="https://images.unsplash.com/photo-1549317661-bd32c8ce0db2?w=500&q=80" alt="Nội thất xe" class="w-full h-full object-cover hover:scale-105 transition duration-500" /></div>
+          <div class="rounded-2xl overflow-hidden"><img src="https://images.unsplash.com/photo-1494976388531-d1058494cdd8?w=500&q=80" alt="Xe đêm" class="w-full h-full object-cover hover:scale-105 transition duration-500" /></div>
+        </div>
+        <div>
+          <h2 class="text-3xl font-bold mb-8">Tại sao chọn MOTO?</h2>
+          <div class="space-y-6">
+            <div class="flex gap-4">
+              <div class="w-12 h-12 bg-blue-100 rounded-xl flex items-center justify-center flex-shrink-0"><i data-lucide="shield" class="text-blue-600 w-[22px] h-[22px]"></i></div>
+              <div><h3 class="font-semibold text-gray-900 mb-1">An toàn & Bảo hiểm</h3><p class="text-gray-500 text-sm leading-relaxed">Tất cả xe đều được kiểm tra kỹ lưỡng và có bảo hiểm toàn diện trong suốt chuyến đi.</p></div>
+            </div>
+            <div class="flex gap-4">
+              <div class="w-12 h-12 bg-blue-100 rounded-xl flex items-center justify-center flex-shrink-0"><i data-lucide="star" class="text-blue-600 w-[22px] h-[22px]"></i></div>
+              <div><h3 class="font-semibold text-gray-900 mb-1">Chất lượng cao</h3><p class="text-gray-500 text-sm leading-relaxed">Hơn 15.000 xe đời mới, đa dạng từ xe phổ thông đến cao cấp, đáp ứng mọi nhu cầu.</p></div>
+            </div>
+            <div class="flex gap-4">
+              <div class="w-12 h-12 bg-blue-100 rounded-xl flex items-center justify-center flex-shrink-0"><i data-lucide="clock" class="text-blue-600 w-[22px] h-[22px]"></i></div>
+              <div><h3 class="font-semibold text-gray-900 mb-1">Tiện lợi 24/7</h3><p class="text-gray-500 text-sm leading-relaxed">Đặt xe online nhanh chóng, hỗ trợ khách hàng 24/7, nhận và trả xe linh hoạt.</p></div>
+            </div>
+            <div class="flex gap-4">
+              <div class="w-12 h-12 bg-blue-100 rounded-xl flex items-center justify-center flex-shrink-0"><i data-lucide="users" class="text-blue-600 w-[22px] h-[22px]"></i></div>
+              <div><h3 class="font-semibold text-gray-900 mb-1">Cộng đồng tin cậy</h3><p class="text-gray-500 text-sm leading-relaxed">Hơn 500.000 khách hàng tin tưởng, với hệ thống đánh giá minh bạch từ người dùng thực.</p></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="py-20 bg-gradient-to-r from-blue-600 to-blue-800 text-white">
+    <div class="container-custom text-center">
+      <h2 class="text-3xl md:text-4xl font-bold mb-4">Sẵn sàng cho chuyến đi tiếp theo?</h2>
+      <p class="text-xl opacity-90 mb-8">Hàng nghìn xe đang chờ bạn khám phá</p>
+      <a href="/vehicles" class="inline-flex items-center gap-2 px-8 py-4 bg-white text-blue-600 rounded-xl font-bold hover:bg-blue-50 transition text-lg">
+        Đặt xe ngay <i data-lucide="arrow-right" class="w-5 h-5"></i>
+      </a>
+    </div>
+  </section>
+
+</div>
+
+<script src="/js/vehicle-card.js"></script>
+<script src="/js/home.js"></script>
