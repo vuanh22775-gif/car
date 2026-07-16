@@ -8,7 +8,8 @@
     "dev": "nodemon src/server.js",
     "build:css": "npx tailwindcss -i ./src/tailwind-input.css -o ./public/css/tailwind.css --minify",
     "build": "npm run build:css",
-    "vercel-build": "npm run build:css"
+    "vercel-build": "npm run build:css",
+    "seed": "node seed.js" 
   },
   "dependencies": {
     "bcryptjs": "^2.4.3",

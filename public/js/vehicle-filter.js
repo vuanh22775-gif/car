@@ -157,16 +157,10 @@ window.VehicleFilter = (function () {
     if (!root) return;
     localFilters = { ...window.VehiclesPage.getFilters() };
 
-    try {
-      const [brandsRes, citiesRes] = await Promise.all([
-        window.api.get('/vehicles/brands'),
-        window.api.get('/vehicles/cities'),
-      ]);
-      brands = brandsRes.data.data;
-      cities = citiesRes.data.data;
-    } catch (err) {
-      console.error('Error loading filter options:', err);
-    }
+    // Lấy danh sách hãng xe / thành phố trực tiếp từ dữ liệu tĩnh (mock-vehicles.js)
+    // thay vì gọi API GET /vehicles/brands và /vehicles/cities.
+    brands = window.MOCK_BRANDS || [];
+    cities = window.MOCK_CITIES || [];
 
     render();
   }
