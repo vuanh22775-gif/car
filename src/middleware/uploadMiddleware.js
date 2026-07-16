@@ -1,17 +1,7 @@
 const multer = require('multer');
-const path = require('path');
-const fs = require('fs');
 const cloudinary = require('../config/cloudinary');
 
-// ── Vercel dùng file system read-only/tạm thời (ephemeral) ───────────────────
-// Multer lưu local disk KHÔNG hoạt động đúng trên Vercel serverless functions:
-// mỗi lần gọi hàm là một môi trường mới, ổ đĩa /uploads sẽ không tồn tại lâu dài
-// và không được chia sẻ giữa các lần gọi. Vì vậy ảnh xe được upload thẳng lên
-// Cloudinary (đã có sẵn trong dependencies gốc của dự án).
-//
-// Khi chạy local mà chưa cấu hình Cloudinary (.env thiếu CLOUDINARY_*), middleware
-// sẽ tự động rơi về lưu đĩa cục bộ (../../uploads/vehicles) để tiện phát triển.
-
+// Kiểm tra xem đã cấu hình đầy đủ biến môi trường Cloudinary chưa
 const useCloudinary = !!(
   process.env.CLOUDINARY_CLOUD_NAME &&
   process.env.CLOUDINARY_API_KEY &&
@@ -20,7 +10,17 @@ const useCloudinary = !!(
 
 let upload;
 
+const fileFilter = (req, file, cb) => {
+  const allowed = ['image/jpeg', 'image/jpg', 'image/png', 'image/webp'];
+  if (allowed.includes(file.mimetype)) {
+    cb(null, true);
+  } else {
+    cb(new Error('Chỉ chấp nhận file ảnh JPG, PNG, WEBP'), false);
+  }
+};
+
 if (useCloudinary) {
+  // 1. CHẠY TRÊN PRODUCTION (VERCEL): Đẩy thẳng lên Cloudinary
   const { CloudinaryStorage } = require('multer-storage-cloudinary');
 
   const storage = new CloudinaryStorage({
@@ -34,34 +34,18 @@ if (useCloudinary) {
 
   upload = multer({
     storage,
+    fileFilter,
     limits: { fileSize: 5 * 1024 * 1024 }, // 5MB / file
   });
 } else {
-  // Fallback local (chỉ dùng khi phát triển ở máy cá nhân, KHÔNG dùng trên Vercel)
-  const uploadDir = path.join(__dirname, '../../uploads/vehicles');
-  if (!fs.existsSync(uploadDir)) {
-    fs.mkdirSync(uploadDir, { recursive: true });
-  }
-
-  const storage = multer.diskStorage({
-    destination: (req, file, cb) => cb(null, uploadDir),
-    filename: (req, file, cb) => {
-      const ext = path.extname(file.originalname).toLowerCase();
-      const name = `${Date.now()}-${Math.round(Math.random() * 1e6)}${ext}`;
-      cb(null, name);
-    },
-  });
-
-  const fileFilter = (req, file, cb) => {
-    const allowed = ['image/jpeg', 'image/jpg', 'image/png', 'image/webp'];
-    if (allowed.includes(file.mimetype)) cb(null, true);
-    else cb(new Error('Chỉ chấp nhận file ảnh JPG, PNG, WEBP'), false);
-  };
+  // 2. FALLBACK (AN TOÀN CHO CẢ VERCEL LẪN LOCAL): Sử dụng Memory Storage thay vì Disk Storage
+  // Việc này loại bỏ hoàn toàn lệnh `fs.mkdirSync` gây sập server trên Vercel.
+  const storage = multer.memoryStorage();
 
   upload = multer({
     storage,
     fileFilter,
-    limits: { fileSize: 5 * 1024 * 1024 },
+    limits: { fileSize: 5 * 1024 * 1024 }, // 5MB / file
   });
 }
 
